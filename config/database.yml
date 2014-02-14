@@ -32,11 +32,8 @@ test:
   socket: /tmp/mysql.sock
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: rosterManager_production
+    adapter: postgresql
+  encoding: unicode
+  database: rosterManager_prod
   pool: 5
-  username: test
-  password: "123456"
-  socket: /tmp/mysql.sock
+  password:
