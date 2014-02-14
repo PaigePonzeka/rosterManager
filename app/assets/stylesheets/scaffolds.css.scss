@@ -1,0 +1,143 @@
+@import "compass/utilities/general/clearfix";
+
+.row-fluid {
+  margin: 0 auto;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.full-width {
+  width: 100%;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+.position {
+  float: left;
+  margin: 0 5px;
+  padding: 10px;
+
+  &.disabled-position {
+    background: #ddd;
+  }
+}
+
+.position-players {
+  margin-left: 0;
+
+  .player {
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.active-player {
+      color: #f0f;
+    }
+
+    &.disabled-player {
+      color: #ccc;
+      text-decoration: line-through;
+      cursor: disabled;
+    }
+
+    &.selected-player {
+      font-weight: bold;
+    }
+  }
+}
+
+.batting-order {
+  font-size: 16px;
+  line-height: 18px;
+  list-style-type: decimal;
+  margin-left: 5px;
+
+  > li {
+    list-style-type: decimal;
+    padding-left: 20px;
+    padding: 5px 0;
+    @include clearfix;
+    background: #fff;
+    border-bottom: 1px solid #666;
+    cursor: move;
+
+    &:first-child {
+      border-top: 1px solid #666;
+    }
+  }
+}
+
+.batting-order-player-name {
+  width: 125px;
+  overflow: hidden;
+  float: left;
+}
+
+.batting-order-player-position {
+  margin: 0 5px;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 11px;
+}
+
+.batting-order-number {
+  float: left;
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.delete-icon {
+  color: #f00;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+
+
+.icon-drag {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: image-url("icon-drag.png") no-repeat;
+  background-size: 10px 10px;
+  float: left; 
+  margin-right: 5px;
+  margin-top: 3px;
+  cursor: move;
+  vertical-align: middle;
+  display: none;
+}

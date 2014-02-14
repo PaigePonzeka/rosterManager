@@ -1,0 +1,26 @@
+%h1 Depth Chart
+.row
+  .batting-order-container.span5
+    %h4 Batting Order
+    %ol.batting-order.js-batting-order
+
+  .depth-chart-container.span7
+    %h4 Depth Chart
+    %ul.depth-chart
+      -@position.each do |position|
+        - positionClass = "js-#{position.label}"
+        %li.position{:class => positionClass}
+          %h5=position.name
+          - positionplayers = getPositionPlayers(position.id)
+          %ul.position-players
+            -positionplayers.each do |positionplayer|
+              -player_name =getPlayer(positionplayer.player_id).name
+              -player_class = "js-#{player_name.downcase.tr!(" ", "_")}"
+              %li.player.js-player{:class => player_class, :data => {:playerclass => player_class, :position => position.label, :positionclass=> positionClass}}=player_name
+      %li.position{:class => "js-positionEH"}
+        %h5 EH
+        %ul.position-players
+          -@players.each do |player|
+            -player_name =player.name
+            -player_class = "js-#{player_name.downcase.tr!(" ", "_")}"
+            %li.player.js-player{:class => player_class, :data => {:playerclass => player_class, :position => "EH", :positionclass=> "js-positionEH"}}=player_name

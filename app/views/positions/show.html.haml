@@ -1,0 +1,12 @@
+#notice=notice
+
+%h1=@position.name
+
+%ul
+  -@players.each do |player|
+    -p = getPlayer(player.player_id)
+    %li=link_to "#{p.name}", p
+
+
+= link_to 'Edit', edit_position_path(@position) |
+= link_to 'Back', positions_path
