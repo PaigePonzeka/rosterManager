@@ -42,8 +42,13 @@
   margin: 0 5px;
   padding: 10px;
 
+
   &.disabled-position {
-    background: #ddd;
+    .player:not(.selected-player) {
+      color: #ccc;
+      text-decoration: line-through;
+      cursor: disabled;
+    }
   }
 }
 

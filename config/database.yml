@@ -32,7 +32,7 @@ test:
   socket: /tmp/mysql.sock
 
 production:
-    adapter: postgresql
+  adapter: postgresql
   encoding: unicode
   database: rosterManager_prod
   pool: 5

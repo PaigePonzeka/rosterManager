@@ -13,8 +13,6 @@ $(document).ready(function(){
       }
      });
 
-
-
   // highlight all the players in a position
   $('.js-player').hover(function(){
     var playerClass = getPlayerClass($(this));
@@ -29,7 +27,7 @@ $(document).ready(function(){
     var playerClass = $this.data('playerclass');
     var positionClass = $this.data('positionclass');
     // remove player
-    $('.' + positionClass).find('.js-player').removeClass('disabled-player');
+    $('.' + positionClass).removeClass('disabled-position').find('.js-player').removeClass('disabled-player');
     $('.' + playerClass).removeClass('disabled-player').removeClass('selected-player');
     $(this).closest('.batting-order-player').remove();
   });
@@ -52,7 +50,10 @@ $(document).ready(function(){
       addPlayerToRoster(playerName, playerPosition, playerClass, positionClass, positionNumber); 
 
      // disable the position 
-     $('.' + positionClass).find('.js-player').addClass("disabled-player");
+     if(playerPosition != "EH") {
+      $('.' + positionClass).addClass('disabled-position').find('.js-player').addClass("disabled-player");
+     }
+     
     $(this).removeClass('disabled-player').addClass('selected-player');
   });
   
